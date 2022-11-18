@@ -1,0 +1,21 @@
+<html>
+
+<head>
+<title>My super blog</title>
+</head>
+
+<body>
+    <div>
+        <h1><a href="/">Ha главную</a> </h1>
+    </div>
+    {% for post in posts %}
+    <div>
+<p>дата публикации: {{post.published_date}}</p>
+<h1><а href="">{{post.title}}</а></h1>
+<р>{{post.text|linebreaksbr}}</р>
+</div>
+{% endfor %}
+
+</body>
+
+</html>
