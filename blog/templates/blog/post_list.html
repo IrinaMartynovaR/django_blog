@@ -1,21 +1,12 @@
-<html>
-
-<head>
-<title>My super blog</title>
-</head>
-
-<body>
-    <div>
-        <h1><a href="/">Ha главную</a> </h1>
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts%}
+    <div class="post">
+        <div class="date">
+            <p> Опубликовано: {{ post.published_date }}</p>
+        </div>
+        <h1><a href="">{{ post.title }}</a> </h1>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
-    {% for post in posts %}
-    <div>
-<p>дата публикации: {{post.published_date}}</p>
-<h1><а href="">{{post.title}}</а></h1>
-<р>{{post.text|linebreaksbr}}</р>
-</div>
-{% endfor %}
-
-</body>
-
-</html>
+    {% endfor %}
+   {% endblock %}
